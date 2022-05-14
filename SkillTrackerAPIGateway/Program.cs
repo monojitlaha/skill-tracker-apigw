@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace StockMarketAPIGateway
 {
@@ -17,9 +18,10 @@ namespace StockMarketAPIGateway
                 {
                     webBuilder.UseStartup<Startup>();
                 })
-           .ConfigureAppConfiguration((hostingContext, config) =>
-           {
-               config.AddJsonFile("oscelot.json");
-           });
+               .ConfigureAppConfiguration((hostingContext, config) =>
+               {
+                   config.AddJsonFile("ocelot.json");
+               })
+              .ConfigureLogging(logging => logging.AddConsole());
     }
 }
