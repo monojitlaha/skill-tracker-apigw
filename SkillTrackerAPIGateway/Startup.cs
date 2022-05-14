@@ -26,7 +26,7 @@ namespace StockMarketAPIGateway
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseRouting();
-            app.UseOcelot();
+            app.UseOcelot().Wait();
         }
     }
 }
