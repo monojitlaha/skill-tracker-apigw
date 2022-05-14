@@ -10,7 +10,11 @@
                 }
             ],
             "UpstreamPathTemplate": "/admin/profile/search",
-            "UpstreamHttpMethod": [ "Get" ]
+            "UpstreamHttpMethod": [ "Get" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/skill-tracker/api/Admin/{criteria}/{criteriaValue}",
@@ -22,7 +26,11 @@
                 }
             ],
             "UpstreamPathTemplate": "/admin/profile/search/{criteria}/{criteriaValue}",
-            "UpstreamHttpMethod": [ "Get" ]
+            "UpstreamHttpMethod": [ "Get" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/skill-tracker/api/Engineer",
@@ -35,7 +43,11 @@
                 }
             ],
             "UpstreamPathTemplate": "/engineer/profile/create",
-            "UpstreamHttpMethod": [ "POST" ]
+            "UpstreamHttpMethod": [ "POST" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         },
         {
             "DownstreamPathTemplate": "/skill-tracker/api/Engineer/{id}",
@@ -48,7 +60,11 @@
                 }
             ],
             "UpstreamPathTemplate": "/engineer/profile/update/{id}",
-            "UpstreamHttpMethod": [ "PUT" ]
+            "UpstreamHttpMethod": [ "PUT" ],
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "Bearer",
+                "AllowedScopes": []
+            }
         }
     ],
     "GlobalConfiguration": {
