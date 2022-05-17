@@ -22,6 +22,9 @@ namespace StockMarketAPIGateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(); // Make sure you call this previous to AddMvc
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
             var secret = "Skilltrackerprivatekey";
             var key = Encoding.ASCII.GetBytes(secret);
             services.AddAuthentication(options =>
@@ -49,6 +52,13 @@ namespace StockMarketAPIGateway
             app.UseRouting();
             app.UseOcelot().Wait();
             app.UseAuthentication();
+
+            app.UseCors(
+            options => options.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+    );
         }
     }
 }
