@@ -23,7 +23,6 @@ namespace StockMarketAPIGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(); // Make sure you call this previous to AddMvc
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             var secret = "Skilltrackerprivatekey";
             var key = Encoding.ASCII.GetBytes(secret);
@@ -54,10 +53,10 @@ namespace StockMarketAPIGateway
             app.UseAuthentication();
 
             app.UseCors(
-            options => options.WithOrigins("http://localhost:4200")
+            options => 
+            options.AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .AllowCredentials()
     );
         }
     }
