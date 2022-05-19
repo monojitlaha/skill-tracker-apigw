@@ -53,11 +53,10 @@ namespace StockMarketAPIGateway
             app.UseAuthentication();
 
             app.UseCors(
-            options => 
+            options =>
             options.AllowAnyOrigin()
             .AllowAnyMethod()
-            .AllowAnyHeader()
-    );
+            .AllowAnyHeader());
         }
     }
 }
